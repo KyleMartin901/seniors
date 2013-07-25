@@ -20,11 +20,26 @@ def seniors(students)
 	students.select { |student| student.senior? }
 end
 
+def juniors(students)
+	students.select { |student| !student.senior? }
+end
+
+# Create new students
 fred = Student.new("Fred", "James", 12)
 sarah = Student.new("Sarah", "Smith", 12)
 jack = Student.new("Jack", "Gong", 11)
+
+# Add all students to an array
 all_students = [fred, sarah, jack]
 
+# Print all senoir students
+puts "Seniors"
 seniors(all_students).each do |student|
-	puts student
+	puts "\s* #{student}"
+end
+
+# Print all jounior students
+puts "\nJuniors"
+juniors(all_students).each do |student|
+	puts "\s* #{student}"
 end
