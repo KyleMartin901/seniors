@@ -11,6 +11,10 @@ class Student
 		grade == 12
 	end
 
+	def junior?
+		grade < 12
+	end
+
 	def to_s
 		"#{last_name}, #{first_name}"
 	end
@@ -21,7 +25,7 @@ def seniors(students)
 end
 
 def juniors(students)
-	students.select { |student| !student.senior? }
+	students.select { |student| student.junior? }
 end
 
 # Create new students
